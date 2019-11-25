@@ -9,3 +9,32 @@ pub fn remove_duplicates_sorted_array(nums: &mut Vec<i32>) -> i32 {
   }
   nums.len() as i32
 }
+
+pub fn max_profit(prices: Vec<i32>) -> i32 {
+  let mut total = 0;
+  for index in 0..prices.len() - 1 {
+    let mut start_day = index;
+    let mut end_day = start_day + 1;
+    let mut largest = 0;
+    while end_day <= prices.len() - 1 {
+      if prices[start_day] >= prices[end_day] {
+        end_day = end_day + 1;
+      } else {
+        let diff = prices[end_day] - prices[start_day];
+        println!(
+          "start {:?} end {:?}  largest {:?} ",
+          prices[start_day], prices[end_day], largest
+        );
+        if diff > largest {
+          largest = diff;
+          end_day = end_day + 1;
+          total = total + largest;
+          println!("{:?} ", largest);
+        } else {
+          end_day = end_day + 1;
+        }
+      }
+    }
+  }
+  total
+}
