@@ -1,4 +1,5 @@
 use crate::easy_arrays::{max_profit, remove_duplicates_sorted_array};
+use crate::easy_strings::{reverse_string};
 // Note this useful idiom: importing names from outer (for mod tests) scope.
 //  use super::*;
 
@@ -12,7 +13,14 @@ fn test_remove_duplicates_sorted_array() {
   assert_eq!(remove_duplicates_sorted_array(&mut vec![1, 1]), 1);
 }
 
+// #[test]
+// fn test_max_profit() {
+//   assert_eq!(max_profit(vec![7, 1, 5, 3, 6, 4]), 7)
+// }
+
 #[test]
-fn test_max_profit() {
-  assert_eq!(max_profit(vec![7, 1, 5, 3, 6, 4]), 7)
+fn test_reverse_string(){
+  let mut input_arr : Vec<char> = "hello".chars().collect();
+  reverse_string(&mut input_arr);
+  assert_eq!(input_arr,"olleh".chars().collect::<Vec<char>>());
 }
