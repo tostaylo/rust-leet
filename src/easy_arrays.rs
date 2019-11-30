@@ -13,7 +13,7 @@ pub fn remove_duplicates_sorted_array(nums: &mut Vec<i32>) -> i32 {
 pub fn max_profit(prices: Vec<i32>) -> i32 {
   let mut total = 0;
   for index in 0..prices.len() - 1 {
-    let mut start_day = index;
+    let start_day = index;
     let mut end_day = start_day + 1;
     let mut largest = 0;
     while end_day <= prices.len() - 1 {
