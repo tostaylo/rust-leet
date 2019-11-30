@@ -43,3 +43,23 @@ pub fn is_anagram(s: String, t: String) -> bool {
   }
   true
 }
+
+//Is this O(nm) or O(n^2)?
+pub fn str_str(haystack: String, needle: String) -> i32 {
+  if needle.is_empty() || haystack == needle {
+    return 0;
+  }
+  let step = needle.len();
+  let mut index = 0;
+  while index <= haystack.len() - 1 {
+    // Probably slow and takes up a ton of memory because of this line.
+    // I'm creating a new collection every loop. It takes time to allocate memory.
+    // Is creating iterators expensive? I'm doing that with chars, skip, and take.
+    let haystack_segment: String = haystack.chars().skip(index).take(step).collect();
+    if needle == haystack_segment {
+      return index as i32;
+    }
+    index = index + 1;
+  }
+  -1
+}

@@ -1,5 +1,5 @@
 use crate::easy_arrays::{max_profit, remove_duplicates_sorted_array};
-use crate::easy_strings::{is_anagram, reverse_string};
+use crate::easy_strings::{is_anagram, reverse_string, str_str};
 // Note this useful idiom: importing names from outer (for mod tests) scope.
 //  use super::*;
 
@@ -34,4 +34,10 @@ fn test_is_anagram() {
   assert_eq!(is_anagram("rat".to_owned(), "art".to_owned()), true);
   assert_eq!(is_anagram("rating".to_owned(), "artink".to_owned()), false);
   assert_eq!(is_anagram("aa".to_owned(), "bb".to_owned()), false);
+}
+
+#[test]
+fn test_str_str() {
+  assert_eq!(str_str(String::from("hello"), String::from("ll")), 2);
+  assert_eq!(str_str(String::from("aaaa"), String::from("ba")), -1);
 }
