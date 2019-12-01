@@ -1,8 +1,9 @@
-use crate::easy_arrays::{max_profit, remove_duplicates_sorted_array};
+use crate::easy_arrays::{max_profit, remove_duplicates_sorted_array, two_sum};
 use crate::easy_strings::{is_anagram, reverse_string, str_str};
 // Note this useful idiom: importing names from outer (for mod tests) scope.
 //  use super::*;
 
+// Easy Arrays
 #[test]
 fn test_remove_duplicates_sorted_array() {
   assert_eq!(
@@ -13,10 +14,19 @@ fn test_remove_duplicates_sorted_array() {
   assert_eq!(remove_duplicates_sorted_array(&mut vec![1, 1]), 1);
 }
 
+#[test]
+fn test_two_sum() {
+  assert_eq!(two_sum(vec![2, 7, 11, 15], 9), vec![0, 1]);
+  assert_eq!(two_sum(vec![2, 7, 11, 15], 26), vec![2, 3]);
+  assert_eq!(two_sum(vec![3, 2, 4], 6), vec![1, 2]);
+}
+
 // #[test]
 // fn test_max_profit() {
 //   assert_eq!(max_profit(vec![7, 1, 5, 3, 6, 4]), 7)
 // }
+
+// Easy Strings
 
 #[test]
 fn test_reverse_string() {

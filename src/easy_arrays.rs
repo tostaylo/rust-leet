@@ -1,3 +1,4 @@
+use std::collections::HashMap;
 //Requirements: Modify in-place with 0(1) space complexity
 pub fn remove_duplicates_sorted_array(nums: &mut Vec<i32>) -> i32 {
   if nums.len() > 0 {
@@ -37,4 +38,17 @@ pub fn max_profit(prices: Vec<i32>) -> i32 {
     }
   }
   total
+}
+
+// O(n) Time and Space complexity
+pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
+  let mut nums_map: HashMap<i32, i32> = HashMap::new();
+  for (index, value) in nums.iter().enumerate() {
+    let diff = target - value;
+    match nums_map.get(value) {
+      Some(val) => return vec![*val, index as i32],
+      None => nums_map.insert(diff, index as i32),
+    };
+  }
+  unreachable!();
 }
