@@ -1,3 +1,4 @@
+use std::collections::hash_map::Entry::{Occupied, Vacant};
 use std::collections::HashMap;
 //Requirements: Modify in-place with 0(1) space complexity
 pub fn remove_duplicates_sorted_array(nums: &mut Vec<i32>) -> i32 {
@@ -51,4 +52,22 @@ pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
     };
   }
   unreachable!();
+}
+
+pub fn single_number(nums: Vec<i32>) -> i32 {
+  let mut map = HashMap::new();
+  for num in nums {
+    let val = match map.entry(num) {
+      Occupied(entry) => entry.into_mut(),
+      Vacant(entry) => entry.insert(0),
+    };
+    *val += 1;
+  }
+  
+  for (key, value) in map {
+    if value == 1 {
+      return key;
+    }
+  }
+  0
 }

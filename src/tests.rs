@@ -1,6 +1,5 @@
-
-use crate::easy_arrays::{max_profit, remove_duplicates_sorted_array, two_sum};
-use crate::easy_strings::{is_anagram, reverse_string, str_str,  is_palindrome};
+use crate::easy_arrays::{max_profit, remove_duplicates_sorted_array, two_sum, single_number};
+use crate::easy_strings::{is_anagram, is_palindrome, reverse_string, str_str};
 // Note this useful idiom: importing names from outer (for mod tests) scope.
 //  use super::*;
 
@@ -22,6 +21,12 @@ fn test_two_sum() {
   assert_eq!(two_sum(vec![3, 2, 4], 6), vec![1, 2]);
 }
 
+#[test]
+
+fn test_single_number(){
+  assert_eq!(single_number(vec![2,2,1]), 1);
+  assert_eq!(single_number(vec![4,1,2,1,2]), 4);
+}
 // #[test]
 // fn test_max_profit() {
 //   assert_eq!(max_profit(vec![7, 1, 5, 3, 6, 4]), 7)
@@ -30,8 +35,11 @@ fn test_two_sum() {
 // Easy Strings
 
 #[test]
-fn test_is_palindrome(){
-  assert_eq!(is_palindrome("A man, a plan, a canal: Panama".to_owned()), true);
+fn test_is_palindrome() {
+  assert_eq!(
+    is_palindrome("A man, a plan, a canal: Panama".to_owned()),
+    true
+  );
 }
 fn test_reverse_string() {
   let mut hello: Vec<char> = "hello".chars().collect();
