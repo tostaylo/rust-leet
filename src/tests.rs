@@ -1,5 +1,5 @@
 use crate::easy_arrays::{max_profit, remove_duplicates_sorted_array};
-use crate::easy_strings::{reverse_string};
+use crate::easy_strings::{reverse_string, is_palindrome};
 // Note this useful idiom: importing names from outer (for mod tests) scope.
 //  use super::*;
 
@@ -23,4 +23,9 @@ fn test_reverse_string(){
   let mut input_arr : Vec<char> = "hello".chars().collect();
   reverse_string(&mut input_arr);
   assert_eq!(input_arr,"olleh".chars().collect::<Vec<char>>());
+}
+
+#[test]
+fn test_is_palindrome(){
+  assert_eq!(is_palindrome("A man, a plan, a canal: Panama".to_owned()), true);
 }
