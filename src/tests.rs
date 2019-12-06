@@ -1,4 +1,6 @@
-use crate::easy_arrays::{max_profit, remove_duplicates_sorted_array, two_sum, single_number};
+use crate::easy_arrays::{
+  intersect, max_profit, remove_duplicates_sorted_array, single_number, two_sum,
+};
 use crate::easy_strings::{is_anagram, is_palindrome, reverse_string, str_str};
 // Note this useful idiom: importing names from outer (for mod tests) scope.
 //  use super::*;
@@ -23,9 +25,14 @@ fn test_two_sum() {
 
 #[test]
 
-fn test_single_number(){
-  assert_eq!(single_number(vec![2,2,1]), 1);
-  assert_eq!(single_number(vec![4,1,2,1,2]), 4);
+fn test_single_number() {
+  assert_eq!(single_number(vec![2, 2, 1]), 1);
+  assert_eq!(single_number(vec![4, 1, 2, 1, 2]), 4);
+}
+
+#[test]
+fn test_intersect() {
+  assert_eq!(intersect(vec![1, 2, 2, 1], vec![2, 2]), [2, 2]);
 }
 // #[test]
 // fn test_max_profit() {
