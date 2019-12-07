@@ -1,4 +1,4 @@
-use crate::easy_arrays::{max_profit, remove_duplicates_sorted_array, two_sum};
+use crate::easy_arrays::{max_profit, remove_duplicates_sorted_array, rotate_array, two_sum};
 use crate::easy_strings::{is_anagram, reverse_string, str_str};
 // Note this useful idiom: importing names from outer (for mod tests) scope.
 //  use super::*;
@@ -19,6 +19,16 @@ fn test_two_sum() {
   assert_eq!(two_sum(vec![2, 7, 11, 15], 9), vec![0, 1]);
   assert_eq!(two_sum(vec![2, 7, 11, 15], 26), vec![2, 3]);
   assert_eq!(two_sum(vec![3, 2, 4], 6), vec![1, 2]);
+}
+
+#[test]
+fn test_rotate_array() {
+  let mut test_collection = vec![1, 2, 3, 4, 5, 6, 7];
+  rotate_array(&mut test_collection, 3);
+  assert_eq!(test_collection, vec![5, 6, 7, 1, 2, 3, 4]);
+  let mut test_collection2 = vec![1, 2];
+  rotate_array(&mut test_collection2, 3);
+  assert_eq!(test_collection2, vec![2, 1]);
 }
 
 // #[test]

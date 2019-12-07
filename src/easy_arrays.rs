@@ -52,3 +52,20 @@ pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
   }
   unreachable!();
 }
+
+pub fn rotate_array(nums: &mut Vec<i32>, k: i32) {
+  let len = nums.len() as i32;
+  if len == k {
+    return;
+  }
+
+  let steps = match k > len {
+    true => k,
+    false => len - k,
+  };
+
+  for _i in 0..steps {
+    let value_to_move = nums.remove(0);
+    nums.push(value_to_move)
+  }
+}
