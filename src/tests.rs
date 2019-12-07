@@ -1,5 +1,8 @@
-use crate::easy_arrays::{max_profit, remove_duplicates_sorted_array, rotate_array, two_sum};
-use crate::easy_strings::{is_anagram, reverse_string, str_str};
+use crate::easy_arrays::{
+  intersect, max_profit, move_zeroes, remove_duplicates_sorted_array, rotate_array, single_number,
+  two_sum,
+};
+use crate::easy_strings::{is_anagram, is_palindrome, reverse_string, str_str};
 // Note this useful idiom: importing names from outer (for mod tests) scope.
 //  use super::*;
 
@@ -31,6 +34,22 @@ fn test_rotate_array() {
   assert_eq!(test_collection2, vec![2, 1]);
 }
 
+fn test_single_number() {
+  assert_eq!(single_number(vec![2, 2, 1]), 1);
+  assert_eq!(single_number(vec![4, 1, 2, 1, 2]), 4);
+}
+
+#[test]
+fn test_intersect() {
+  assert_eq!(intersect(vec![1, 2, 2, 1], vec![2, 2]), [2, 2]);
+}
+
+#[test]
+fn test_move_zeroes() {
+  let mut tester_vec = vec![0, 1, 0, 3, 12];
+  move_zeroes(&mut tester_vec);
+  assert_eq!(tester_vec, vec![1, 3, 12, 0, 0]);
+}
 // #[test]
 // fn test_max_profit() {
 //   assert_eq!(max_profit(vec![7, 1, 5, 3, 6, 4]), 7)
@@ -39,6 +58,12 @@ fn test_rotate_array() {
 // Easy Strings
 
 #[test]
+fn test_is_palindrome() {
+  assert_eq!(
+    is_palindrome("A man, a plan, a canal: Panama".to_owned()),
+    true
+  );
+}
 fn test_reverse_string() {
   let mut hello: Vec<char> = "hello".chars().collect();
   let mut goodbye: Vec<char> = "goodbye".chars().collect();
