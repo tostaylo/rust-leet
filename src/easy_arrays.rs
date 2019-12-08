@@ -127,6 +127,7 @@ pub fn intersect(nums1: Vec<i32>, nums2: Vec<i32>) -> Vec<i32> {
 pub fn move_zeroes(nums: &mut Vec<i32>) {
   let mut index = 0;
   let mut count = 0;
+  // Find the 0's in nums and remove them. Keeping the rest of the array in order.
   while index < nums.len() {
     if nums[index] == 0 {
       nums.remove(index);
@@ -135,6 +136,7 @@ pub fn move_zeroes(nums: &mut Vec<i32>) {
       index = index + 1;
     }
   }
+  // Add the number of 0's counted to the end of the num.
   for _index in 0..count {
     nums.push(0);
   }

@@ -2,7 +2,7 @@ use crate::easy_arrays::{
   intersect, max_profit, move_zeroes, remove_duplicates_sorted_array, rotate_array, single_number,
   two_sum,
 };
-use crate::easy_strings::{is_anagram, is_palindrome, reverse_string, str_str};
+use crate::easy_strings::{first_uniq_char, is_anagram, is_palindrome, reverse_string, str_str};
 // Note this useful idiom: importing names from outer (for mod tests) scope.
 //  use super::*;
 
@@ -85,4 +85,10 @@ fn test_is_anagram() {
 fn test_str_str() {
   assert_eq!(str_str(String::from("hello"), String::from("ll")), 2);
   assert_eq!(str_str(String::from("aaaa"), String::from("ba")), -1);
+}
+
+#[test]
+fn test_first_uniq_char() {
+  assert_eq!(first_uniq_char("loveleetcode".to_owned()), 2);
+  assert_eq!(first_uniq_char("cc".to_owned()), -1);
 }

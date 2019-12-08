@@ -1,4 +1,5 @@
 use std::collections::HashMap;
+
 // mutate in place with O(1) space complexity
 pub fn reverse_string(s: &mut Vec<char>) {
   let mut left_pointer = 0;
@@ -85,4 +86,31 @@ pub fn str_str(haystack: String, needle: String) -> i32 {
     index = index + 1;
   }
   -1
+}
+
+// byte code would've been faster.
+// keeping count instead of pushing vectors would be another approach. Requires looping through s twice.
+// O(n) Time and Space
+pub fn first_uniq_char(s: String) -> i32 {
+  // make map of chars in s as keys and vecs of their index's as values
+  let mut map: HashMap<char, Vec<usize>> = HashMap::new();
+  for (index, letter) in s.chars().enumerate() {
+    map.entry(letter).or_insert(vec![]).push(index);
+  }
+
+  let mut min = s.len();
+  // find all the vecs in map which have a length of 1 and then find the min value of those vecs.
+  for (_key, value) in map {
+    if value.len() == 1 {
+      if value[0] < min {
+        min = value[0];
+      }
+    }
+  }
+  // No uniques
+  if min == s.len() {
+    -1
+  } else {
+    min as i32
+  }
 }
