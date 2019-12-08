@@ -141,3 +141,7 @@ pub fn move_zeroes(nums: &mut Vec<i32>) {
     nums.push(0);
   }
 }
+
+//https://stackoverflow.com/questions/42519/how-do-you-rotate-a-two-dimensional-array
+//matrix[row][column]
+pub fn rotate(matrix: &mut Vec<Vec<i32>>) {}

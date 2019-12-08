@@ -1,6 +1,6 @@
 use crate::easy_arrays::{
-  intersect, max_profit, move_zeroes, remove_duplicates_sorted_array, rotate_array, single_number,
-  two_sum,
+  intersect, max_profit, move_zeroes, remove_duplicates_sorted_array, rotate, rotate_array,
+  single_number, two_sum,
 };
 use crate::easy_strings::{first_uniq_char, is_anagram, is_palindrome, reverse_string, str_str};
 // Note this useful idiom: importing names from outer (for mod tests) scope.
@@ -49,6 +49,13 @@ fn test_move_zeroes() {
   let mut tester_vec = vec![0, 1, 0, 3, 12];
   move_zeroes(&mut tester_vec);
   assert_eq!(tester_vec, vec![1, 3, 12, 0, 0]);
+}
+
+#[test]
+fn test_rotate() {
+  let mut tester = vec![vec![1, 2, 3], vec![4, 5, 6], vec![7, 8, 9]];
+  rotate(&mut tester);
+  assert_eq!(tester, vec![vec![7, 4, 1], vec![8, 5, 2], vec![9, 6, 3]])
 }
 // #[test]
 // fn test_max_profit() {

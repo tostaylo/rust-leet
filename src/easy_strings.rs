@@ -78,7 +78,6 @@ pub fn str_str(haystack: String, needle: String) -> i32 {
   while index <= haystack.len() - 1 {
     // Probably slow and takes up a ton of memory because of this line.
     // I'm creating a new collection every loop. It takes time to allocate memory.
-    // Is creating iterators expensive? I'm doing that with chars, skip, and take.
     let haystack_segment: String = haystack.chars().skip(index).take(step).collect();
     if needle == haystack_segment {
       return index as i32;
