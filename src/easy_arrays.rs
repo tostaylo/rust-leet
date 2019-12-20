@@ -144,4 +144,7 @@ pub fn move_zeroes(nums: &mut Vec<i32>) {
 
 //https://stackoverflow.com/questions/42519/how-do-you-rotate-a-two-dimensional-array
 //matrix[row][column]
-pub fn rotate(matrix: &mut Vec<Vec<i32>>) {}
+//Doing the multiplication route with holding one value at a time. Creating a lookup map with coordinates of the item which is in the rotated spot. 
+pub fn rotate_image(matrix: &mut Vec<Vec<i32>>) {
+  
+}

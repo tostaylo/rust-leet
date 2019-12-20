@@ -1,5 +1,5 @@
 use crate::easy_arrays::{
-  intersect, max_profit, move_zeroes, remove_duplicates_sorted_array, rotate, rotate_array,
+  intersect, max_profit, move_zeroes, remove_duplicates_sorted_array, rotate_array, rotate_image,
   single_number, two_sum,
 };
 use crate::easy_strings::{first_uniq_char, is_anagram, is_palindrome, reverse_string, str_str};
@@ -52,11 +52,12 @@ fn test_move_zeroes() {
 }
 
 #[test]
-fn test_rotate() {
+fn test_rotate_image() {
   let mut tester = vec![vec![1, 2, 3], vec![4, 5, 6], vec![7, 8, 9]];
-  rotate(&mut tester);
+  rotate_image(&mut tester);
   assert_eq!(tester, vec![vec![7, 4, 1], vec![8, 5, 2], vec![9, 6, 3]])
 }
+
 // #[test]
 // fn test_max_profit() {
 //   assert_eq!(max_profit(vec![7, 1, 5, 3, 6, 4]), 7)
