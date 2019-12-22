@@ -142,9 +142,60 @@ pub fn move_zeroes(nums: &mut Vec<i32>) {
   }
 }
 
+//incorrect answer currently
 //https://stackoverflow.com/questions/42519/how-do-you-rotate-a-two-dimensional-array
 //matrix[row][column]
-//Doing the multiplication route with holding one value at a time. Creating a lookup map with coordinates of the item which is in the rotated spot. 
+//Doing the multiplication route with holding one value at a time. Creating a lookup map with coordinates of the item which is in the rotated spot.
 pub fn rotate_image(matrix: &mut Vec<Vec<i32>>) {
-  
+  let layers = matrix.len() / 2;
+  println!("{:?}", layers);
+  let end = matrix.len() - 1;
+  for current_layer in 0..layers {
+    rotate(
+      current_layer,
+      (end as u32 - current_layer as u32) as usize,
+      matrix,
+    );
+  }
+
+  fn rotate(start: usize, end: usize, matrix: &mut Vec<Vec<i32>>) {
+    let temp = set_temp(matrix, start, end);
+    set_left(matrix, start, end);
+    set_bottom(matrix, start, end);
+    set_right(matrix, start, end);
+    set_top(matrix, temp, start, end);
+
+    fn set_temp(matrix: &mut Vec<Vec<i32>>, start: usize, end: usize) -> Vec<i32> {
+      let mut temp = vec![];
+      for index in start..end + 1 {
+        temp.push(matrix[index][start]);
+      }
+      temp
+    }
+    fn set_left(matrix: &mut Vec<Vec<i32>>, start: usize, end: usize) {
+      // Make sure not to set the start origin here
+      for index in start + 1..end + 1 {
+        matrix[index][start] = matrix[end][index];
+      }
+    }
+    fn set_bottom(matrix: &mut Vec<Vec<i32>>, start: usize, end: usize) {
+      let mut end_increment = 0;
+      for index in start..end + 1 {
+        // Need two different incrementing variables
+        matrix[end][index] = matrix[end - end_increment][end];
+        end_increment = end_increment + 1;
+      }
+    }
+
+    fn set_right(matrix: &mut Vec<Vec<i32>>, start: usize, end: usize) {
+      for index in (start..end + 1).rev() {
+        matrix[index][end] = matrix[start][index];
+      }
+    }
+    fn set_top(matrix: &mut Vec<Vec<i32>>, temp: Vec<i32>, start: usize, end: usize) {
+      for index in start..temp.len() {
+        matrix[start][index] = temp[end - index];
+      }
+    }
+  }
 }

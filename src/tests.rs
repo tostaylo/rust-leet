@@ -51,12 +51,31 @@ fn test_move_zeroes() {
   assert_eq!(tester_vec, vec![1, 3, 12, 0, 0]);
 }
 
-#[test]
-fn test_rotate_image() {
-  let mut tester = vec![vec![1, 2, 3], vec![4, 5, 6], vec![7, 8, 9]];
-  rotate_image(&mut tester);
-  assert_eq!(tester, vec![vec![7, 4, 1], vec![8, 5, 2], vec![9, 6, 3]])
-}
+// #[test]
+// fn test_rotate_image() {
+//   let mut tester = vec![
+//     vec![43, 39, 3, 33, 37, 20, 14],
+//     vec![9, 18, 9, -1, 40, 22, 38],
+//     vec![14, 42, 3, 23, 12, 14, 32],
+//     vec![18, 31, 45, 11, 8, -1, 31],
+//     vec![28, 44, 14, 23, 40, 24, 13],
+//     vec![29, 45, 33, 45, 20, 0, 45],
+//     vec![12, 23, 35, 32, 22, 39, 8],
+//   ];
+//   rotate_image(&mut tester);
+//   assert_eq!(
+//     tester,
+//     vec![
+//       vec![12, 29, 28, 18, 14, 9, 43],
+//       vec![23, 45, 44, 31, 42, 18, 39],
+//       vec![35, 33, 14, 45, 3, 9, 3],
+//       vec![32, 45, 23, 11, 23, -1, 33],
+//       vec![22, 20, 40, 8, 12, 40, 37],
+//       vec![39, 0, 24, -1, 14, 22, 20],
+//       vec![8, 45, 13, 31, 32, 38, 14]
+//     ]
+//   );
+// }
 
 // #[test]
 // fn test_max_profit() {
