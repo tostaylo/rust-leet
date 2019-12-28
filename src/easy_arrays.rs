@@ -148,7 +148,6 @@ pub fn move_zeroes(nums: &mut Vec<i32>) {
 //Doing the multiplication route with holding one value at a time. Creating a lookup map with coordinates of the item which is in the rotated spot.
 pub fn rotate_image(matrix: &mut Vec<Vec<i32>>) {
   let layers = matrix.len() / 2;
-  println!("{:?}", layers);
   let end = matrix.len() - 1;
   for current_layer in 0..layers {
     rotate(
@@ -163,7 +162,7 @@ pub fn rotate_image(matrix: &mut Vec<Vec<i32>>) {
     set_left(matrix, start, end);
     set_bottom(matrix, start, end);
     set_right(matrix, start, end);
-    set_top(matrix, temp, start, end);
+    set_top(matrix, temp, start);
 
     fn set_temp(matrix: &mut Vec<Vec<i32>>, start: usize, end: usize) -> Vec<i32> {
       let mut temp = vec![];
@@ -192,9 +191,9 @@ pub fn rotate_image(matrix: &mut Vec<Vec<i32>>) {
         matrix[index][end] = matrix[start][index];
       }
     }
-    fn set_top(matrix: &mut Vec<Vec<i32>>, temp: Vec<i32>, start: usize, end: usize) {
-      for index in start..temp.len() {
-        matrix[start][index] = temp[end - index];
+    fn set_top(matrix: &mut Vec<Vec<i32>>, temp: Vec<i32>, start: usize) {
+      for index in 0..temp.len() {
+        matrix[start][index + start] = temp[temp.len() - 1 - index];
       }
     }
   }
