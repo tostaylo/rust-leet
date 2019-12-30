@@ -34,9 +34,9 @@ fn test_rotate_array() {
   let mut test_collection = vec![1, 2, 3, 4, 5, 6, 7];
   rotate_array(&mut test_collection, 3);
   assert_eq!(test_collection, vec![5, 6, 7, 1, 2, 3, 4]);
-  let mut test_collection2 = vec![1, 2];
-  rotate_array(&mut test_collection2, 3);
-  assert_eq!(test_collection2, vec![2, 1]);
+  let mut test_collection2 = vec![1, 2, 3];
+  rotate_array(&mut test_collection2, 4);
+  assert_eq!(test_collection2, vec![3, 1, 2]);
 }
 
 #[test]

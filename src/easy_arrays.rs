@@ -62,8 +62,11 @@ pub fn rotate_array(nums: &mut Vec<i32>, k: i32) {
     return;
   }
 
+  // Here I am just determining how many times to push the front number to the rear of the array.
+  // The modulus will give the remainder of a division of k by len
+  // So that can be plugged in place of k when the number to rotate is greater than the length of array
   let steps = match k > len {
-    true => k,
+    true => len - (k % len),
     false => len - k,
   };
 
