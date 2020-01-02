@@ -2,6 +2,15 @@
 //  use super::*;
 
 // Easy Arrays
+
+#[test]
+fn test_contains_duplicate() {
+  #[cfg(test)]
+  use crate::easy_arrays::contains_duplicates;
+  assert_eq!(contains_duplicates(vec![1, 2, 3, 1]), true);
+  assert_eq!(contains_duplicates(vec![1, 2, 3, 4]), false);
+}
+
 #[test]
 fn test_remove_duplicates_sorted_array() {
   #[cfg(test)]
@@ -92,9 +101,6 @@ fn test_rotate_image() {
       vec![8, 45, 13, 31, 32, 38, 14]
     ]
   );
-  // let mut tester = vec![vec![1, 2, 3], vec![4, 5, 6], vec![7, 8, 9]];
-  // rotate_image(&mut tester);
-  // assert_eq!(tester, vec![vec![7, 4, 1], vec![8, 5, 2], vec![9, 6, 3]]);
 }
 
 // #[test]
