@@ -102,7 +102,12 @@ fn test_rotate_image() {
     ]
   );
 }
-
+#[test]
+fn test_plus_one() {
+  #[cfg(test)]
+  use crate::easy_arrays::plus_one;
+  assert_eq!(plus_one(vec![9, 8, 8]), false);
+}
 // #[test]
 // fn test_max_profit() {
 //   assert_eq!(max_profit(vec![7, 1, 5, 3, 6, 4]), 7)
