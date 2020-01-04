@@ -10,6 +10,9 @@ use std::time::Instant;
 // If I figure this out, this could be a blog post
 // So now I have it for Clone trait but do strings implement Clone trait?
 // May still need to make a struct for this with methods for strings vs vecs
+// Also this is expecting T to be a value and not a reference, can it be made to accept values and references?
+// Can it be made to expect a return type to the function or no return type?
+// Writing this perfomance struct and implement traits for it would be a good exercise.
 pub fn compare_perf<T: Clone>(functions: Vec<fn(T) -> T>, arg: T, iterations: i64) {
   for (item_number, item) in functions.iter().enumerate() {
     let now = Instant::now();
