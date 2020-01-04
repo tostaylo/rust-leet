@@ -225,22 +225,3 @@ pub fn contains_duplicates(nums: Vec<i32>) -> bool {
   }
   false
 }
-
-// Reverse Input
-// Add one
-// Reverse result
-pub fn plus_one(digits: Vec<i32>) -> bool {
-  let mut clone: Vec<i32> = digits.iter().rev().cloned().collect();
-  for index in 0..clone.len() {
-    if clone[index] < 9 {
-      clone[index] = clone[index] + 1;
-    } else {
-      clone[index] = 0;
-    }
-  }
-  if clone[clone.len() - 1] == 0 {
-    clone.push(1);
-  }
-  println!("{:?}", clone.iter().rev().collect::<Vec<&i32>>());
-  true
-}
