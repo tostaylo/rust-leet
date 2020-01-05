@@ -20,7 +20,7 @@ pub fn plus_one(digits: Vec<i32>) -> Vec<i32> {
   reversed_digits.iter().rev().cloned().collect::<Vec<i32>>()
 }
 
-// Faster due to not reversing.
+// Faster due to not reversing and cloning.
 pub fn plus_one_faster(digits: Vec<i32>) -> Vec<i32> {
   let mut digits = digits;
   for idx in (0..digits.len()).rev() {
