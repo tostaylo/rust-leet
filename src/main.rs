@@ -1,14 +1,17 @@
 mod contains_duplicates;
-mod easy_strings;
+mod first_uniq_char;
 mod intersect;
+mod is_anagram;
+mod is_palindrome;
 mod move_zeroes;
 mod performance;
 mod plus_one;
 mod remove_duplicates_sorted_array;
+mod reverse_string;
 mod rotate_array;
 mod rotate_image;
 mod single_number;
-mod tests;
+mod str_str;
 mod two_sum;
 
 // Identify all of these mods as easy somehow

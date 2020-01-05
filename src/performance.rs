@@ -12,7 +12,18 @@ use std::time::Instant;
 // May still need to make a struct for this with methods for strings vs vecs
 // Also this is expecting T to be a value and not a reference, can it be made to accept values and references?
 // Can it be made to expect a return type to the function or no return type?
-// Writing this perfomance struct and implement traits for it would be a good exercise.
+// Writing this performance struct and implement traits for it would be a good exercise.
+
+// First I only wanted to write a function which could take in two functions and run performance tests on them.
+// Show what that function looked like.
+// I soon realized this approach was going to be limiting. I wanted to be able to time functions for functions which accepted different parameter types and returned different types.
+// Which led me to generics.
+// Pros and Cons of this approach
+// can i get the actual name of the function being passed in?
+
+// Intro - As a way to learn rust I am working through LeetCode problems in rust. I should probably rename this repo to rust-leetcode
+// Some of the problems in leetcode did not have timing
+// So here we are.
 pub fn compare_perf<T: Clone>(functions: Vec<fn(T) -> T>, arg: T, iterations: i64) {
   for (item_number, item) in functions.iter().enumerate() {
     let now = Instant::now();
