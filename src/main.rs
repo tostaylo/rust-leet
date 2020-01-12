@@ -3,6 +3,7 @@ mod first_uniq_char;
 mod intersect;
 mod is_anagram;
 mod is_palindrome;
+mod longest_common_prefix;
 mod move_zeroes;
 mod performance;
 mod plus_one;
