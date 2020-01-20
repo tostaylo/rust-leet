@@ -53,22 +53,22 @@ pub fn longest_common_prefix(strings: Vec<String>) -> String {
 
 #[test]
 fn test_longest_common_prefix() {
-  // assert_eq!(
-  //   longest_common_prefix(vec![
-  //     "flower".to_string(),
-  //     "flow".to_string(),
-  //     "flight".to_string()
-  //   ]),
-  //   "fl"
-  // );
-  // assert_eq!(
-  //   longest_common_prefix(vec![
-  //     "dog".to_string(),
-  //     "racecar".to_string(),
-  //     "flight".to_string()
-  //   ]),
-  //   ""
-  // );
+  assert_eq!(
+    longest_common_prefix(vec![
+      "flower".to_string(),
+      "flow".to_string(),
+      "flight".to_string()
+    ]),
+    "fl"
+  );
+  assert_eq!(
+    longest_common_prefix(vec![
+      "dog".to_string(),
+      "racecar".to_string(),
+      "flight".to_string()
+    ]),
+    ""
+  );
 
   assert_eq!(
     longest_common_prefix(vec!["a".to_string(), "b".to_string(),]),

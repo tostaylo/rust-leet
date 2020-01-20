@@ -1,4 +1,5 @@
 mod contains_duplicates;
+mod count_and_say;
 mod first_uniq_char;
 mod intersect;
 mod is_anagram;
